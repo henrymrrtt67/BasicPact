@@ -45,12 +45,12 @@ namespace PactTest.CosumerTests
                     {
                         { "Content-Type", "application/json; charset=utf-8" }
                     },
-                      Body = new //NOTE: Note the case sensitivity here, the body will be serialised as per the casing defined
+                      Body = new
                       {
                           Id = "tester",
                           Number = 21
                       }
-                  }); //NOTE: WillRespondWith call must come last as it will register the interaction
+                  }); 
 
             var Consumer = new ApiClient(_mockProviderServiceBaseUri);
 
