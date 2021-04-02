@@ -41,7 +41,7 @@ namespace PactTest.ProviderTests
                     .ProviderState($"{ServiceUri}/provider-states")
                     .ServiceProvider("Something API", ServiceUri)
                     .HonoursPactWith("Consumer")
-                    .PactUri("..\\..\\..\\Consumer.Tests\\pacts\\consumer-something_api.json")
+                    .PactUri("..\\pacts\\consumer-basic_api.json")
                     .Verify();
 
             }
