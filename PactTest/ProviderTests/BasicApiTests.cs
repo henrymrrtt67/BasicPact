@@ -39,7 +39,7 @@ namespace PactTest.ProviderTests
 
                 pactVerifier
                     .ProviderState($"{ServiceUri}/provider-states")
-                    .ServiceProvider("Something API", ServiceUri)
+                    .ServiceProvider("Basic API", ServiceUri)
                     .HonoursPactWith("Consumer")
                     .PactUri("..\\pacts\\consumer-basic_api.json")
                     .Verify();
