@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Mvc;
+using System.Web.Http;
 using Microsoft.AspNetCore.Http;
 using PactNet.Mocks.MockHttpService.Models;
 
 namespace Provider.APIs
 {
-    [Route("basic")]
-    public class BasicController : Controller
+    public class BasicController : ApiController
     {
-        [HttpGet]
-        [RouteAttribute("{id}")]
+        [Route("basic/{id}")]
         public ProviderServiceResponse GetBasicObject(string id)
         {
             if (id == "tester")

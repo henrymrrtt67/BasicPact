@@ -1,18 +1,28 @@
 ﻿using Consumer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Owin;
 
 namespace PactTest
 {
     public class TestStartup
     {
-        public void Configuration(IApplicationBuilder app)
+        public TestStartup(IConfiguration configuration)
         {
-            var apiStartup = new TestStartup();
+            _configuration = configuration;
+        }
+
+        public IConfiguration _configuration { get; }
+
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            var apiStartup = new Startup(_configuration);
 
             app.UseMiddleware<ProviderStateMiddleware>();
 
-            apiStartup.Configuration(app);
+            apiStartup.Configure(app, env);
         }
     }
 }
